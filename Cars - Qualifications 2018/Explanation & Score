@@ -1,0 +1,26 @@
+Score= about 31M according to our score calculator.
+Based on this sentence: "For every ride that finishes on time (or early), you will earn points proportional to the distance of that ride;
+plus an additional bonus if the ride also started precisely on time."
+-----------------------------------------------------------------------
+Explanation:
+------------
+We have a greedy approach, that we solve the problem for each car independently and apply this for every cars.
+
+First: 
+we sort our rides according to:
+1- Its earliest start, so we can get as maximum bonus as possible.
+2- Points I will get from taking this ride, which is equal to the distance between its start and its end.
+
+Second:
+We loop on all the non taken rides, and calculating the time it takes me to reach its starting place
+adding this time to my current time and checking if i can take the ride and finish it before its latest finish.
+So, I can get points from it.
+If this condition falis, I won't take that ride and continue looping on other rides with my current time as it is.
+
+Third:
+Sort the rides again after removing the taken ride according to its latest finish and its points.
+So, I can then take rides that will finish early.
+
+We apply this process for all cars starting with time = 0 and removing any ride that has been taken before.
+
+
